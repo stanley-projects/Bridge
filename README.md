@@ -2,7 +2,7 @@
 
 Open Apple Maps links on Android without getting stuck in the browser.
 
-Apple Maps Redirect catches `maps.apple.com` links and shared Apple Maps text, converts the location into a Google Maps-compatible link, then lets you open it with Google Maps, Waze, or another installed maps app that handles `geo:` links.
+Apple Maps Redirect catches `maps.apple.com` links and shared Apple Maps text, converts the location into a Google Maps-compatible link, then lets you open it with Google Maps, Waze, or any other maps app of your choosing that handles `geo:` links.
 
 ## What It Does
 
