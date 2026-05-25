@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apple Maps Redirect opens Apple Maps links on Android in Google Maps, Waze, or another maps app.">
+  <title>Apple Maps Redirect</title>
+  <style>
+    :root {
+      --ink: #17211b;
+      --muted: #546159;
+      --line: #d8e1da;
+      --paper: #fbfcfb;
+      --panel: #ffffff;
+      --green: #2f9d50;
+      --green-dark: #1d7638;
+      --blue: #2867b2;
+      --amber: #f3b33f;
+      --soft: #eef6f0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 252, 251, 0.94);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: conic-gradient(from 160deg, var(--green), var(--blue), var(--amber), var(--green));
+      color: white;
+      font-weight: 900;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+    }
+
+    .hero {
+      min-height: calc(100svh - 68px);
+      display: grid;
+      align-items: center;
+      padding: 60px 0 44px;
+      background: linear-gradient(110deg, rgba(251, 252, 251, 0.96), rgba(251, 252, 251, 0.82)), url("https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2200&q=82") center / cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.72fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(44px, 8vw, 84px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 660px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-weight: 750;
+      background: var(--panel);
+    }
+
+    .button.primary {
+      border-color: var(--green-dark);
+      background: var(--green);
+      color: white;
+    }
+
+    .phone {
+      width: min(100%, 380px);
+      margin-left: auto;
+      border: 1px solid #253029;
+      border-radius: 34px;
+      padding: 14px;
+      background: #111812;
+      box-shadow: 0 28px 80px rgba(23, 33, 27, 0.28);
+    }
+
+    .screen {
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--panel);
+      min-height: 620px;
+    }
+
+    .status {
+      height: 34px;
+      background: #f6f8f6;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .app {
+      padding: 24px;
+    }
+
+    .app h2 {
+      font-size: 24px;
+      line-height: 1.12;
+      margin: 0 0 4px;
+    }
+
+    .app p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .input {
+      margin: 28px 0 14px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .convert {
+      min-height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--green);
+      color: white;
+      font-weight: 800;
+    }
+
+    .result {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfdfb;
+    }
+
+    .label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .url {
+      margin-top: 8px;
+      color: var(--green-dark);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 14px 0 0;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 22px;
+    }
+
+    .card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .step {
+      border-top: 3px solid var(--green);
+      background: var(--soft);
+      padding: 18px;
+      counter-increment: step;
+    }
+
+    .step::before {
+      content: counter(step);
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .step span {
+      color: var(--muted);
+    }
+
+    .install {
+      background: #17211b;
+      color: white;
+    }
+
+    .install .section-head p,
+    .install .card p {
+      color: #c4d0c8;
+    }
+
+    .install .card {
+      background: #202c24;
+      border-color: #344238;
+    }
+
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      background: rgba(47, 157, 80, 0.12);
+      padding: 2px 5px;
+      border-radius: 5px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .features,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .phone {
+        margin: 10px 0 0;
+      }
+
+      .screen {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 28px, 1120px);
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .navlinks {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#">
+        <span class="mark">A</span>
+        <span>Apple Maps Redirect</span>
+      </a>
+      <div class="navlinks">
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="#source">Source</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Apple Maps Redirect</h1>
+          <p class="lead">A tiny Android utility that catches Apple Maps links and opens them in Google Maps, Waze, or the maps app you actually use.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/stanley-projects/AppleMapsRedirect/releases/latest">Download APK</a>
+            <a class="button" href="https://github.com/stanley-projects/AppleMapsRedirect">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="phone" aria-label="Preview of the Android converter screen">
+          <div class="screen">
+            <div class="status"></div>
+            <div class="app">
+              <h2>Apple Maps Redirect</h2>
+              <p>Convert Apple Maps links to Google Maps</p>
+              <div class="input">https://maps.apple.com/?ll=37.7749,-122.4194&amp;q=San%20Francisco</div>
+              <div class="convert">Convert</div>
+              <div class="result">
+                <div class="label">Google Maps Link</div>
+                <div class="url">https://www.google.com/maps/search/?api=1&amp;query=37.7749,-122.4194</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Built for the link people actually send you.</h2>
+          <p>Open shared Apple Maps locations on Android with fewer taps and less browser wandering.</p>
+        </div>
+        <div class="features">
+          <div class="card">
+            <strong>Intercept links</strong>
+            <p>Handles <code>maps.apple.com</code> links directly from chats, email, browsers, and shared text.</p>
+          </div>
+          <div class="card">
+            <strong>Convert locations</strong>
+            <p>Supports coordinates, place searches, addresses, and directions destinations.</p>
+          </div>
+          <div class="card">
+            <strong>Pick your app</strong>
+            <p>Uses Android's chooser so Google Maps, Waze, and other compatible apps can open the route.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Apple Maps Redirect stays out of the way until a maps link needs help.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><strong>Install</strong><span>Download the APK from the latest GitHub release.</span></div>
+          <div class="step"><strong>Tap a link</strong><span>Open an Apple Maps link from any app on your phone.</span></div>
+          <div class="step"><strong>Choose redirect</strong><span>Select Apple Maps Redirect when Android asks how to open it.</span></div>
+          <div class="step"><strong>Open maps</strong><span>Pick Google Maps, Waze, or another installed maps app.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="install">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Install on Android</h2>
+          <p>Grab the latest APK, allow your browser or file manager to install unknown apps if Android asks, then open an Apple Maps link and choose Apple Maps Redirect.</p>
+        </div>
+        <div class="features">
+          <div class="card">
+            <strong>No account needed</strong>
+            <p>The app does not require sign-in, cloud sync, or a service account.</p>
+          </div>
+          <div class="card">
+            <strong>No analytics</strong>
+            <p>It does not collect usage data or run background tracking.</p>
+          </div>
+          <div class="card">
+            <strong>Open source</strong>
+            <p>The Android project is public so anyone can inspect or build it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="source">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Build it yourself</h2>
+          <p>Clone the repository and run <code>.\gradlew.bat assembleDebug</code>. The APK lands at <code>app/build/outputs/apk/debug/app-debug.apk</code>.</p>
+        </div>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/stanley-projects/AppleMapsRedirect">Open repository</a>
+          <a class="button" href="https://github.com/stanley-projects/AppleMapsRedirect/issues">Report an issue</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Apple Maps Redirect is an independent Android utility and is not affiliated with Apple or Google.</div>
+  </footer>
+</body>
+</html>
