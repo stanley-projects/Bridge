@@ -3,8 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bridge opens Apple Maps links on Android in Google Maps, Waze, or any other maps app of your choosing.">
-  <title>Bridge</title>
+
+  <!-- Primary SEO -->
+  <title>Bridge — Open Apple Maps Links on Android in Google Maps, Waze, or Any Maps App</title>
+  <meta name="description" content="Bridge is a free, open-source Android app that opens maps.apple.com links in Google Maps, Waze, HERE WeGo, OsmAnd, or any other maps app of your choosing. No accounts, no tracking, under 5 MB.">
+  <meta name="keywords" content="open Apple Maps links on Android, Apple Maps to Google Maps, Apple Maps Android, maps.apple.com Android, Apple Maps redirect Android, convert Apple Maps to Google Maps, Apple Maps in Waze, geo URI handler Android, Apple Maps link opener, iPhone shared location Android, Android link handler, free Android maps utility, open source Android app, no tracking maps app">
+  <meta name="author" content="Stanley Nwobosi">
+  <meta name="theme-color" content="#17211b">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="googlebot" content="index,follow">
+  <meta name="application-name" content="Bridge">
+  <link rel="canonical" href="https://stanley-projects.github.io/Bridge/">
+
+  <!-- Favicon / app icons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="mask-icon" href="favicon.svg" color="#17211b">
+
+  <!-- Open Graph (Facebook, LinkedIn, Discord, Slack, WhatsApp link previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bridge">
+  <meta property="og:title" content="Bridge — Open Apple Maps Links on Android">
+  <meta property="og:description" content="Free open-source Android app that opens maps.apple.com links in Google Maps, Waze, or any other maps app of your choosing. No accounts, no tracking.">
+  <meta property="og:url" content="https://stanley-projects.github.io/Bridge/">
+  <meta property="og:image" content="https://stanley-projects.github.io/Bridge/og-image.svg">
+  <meta property="og:image:type" content="image/svg+xml">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Bridge app icon and tagline: open Apple Maps links on Android.">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bridge — Open Apple Maps Links on Android">
+  <meta name="twitter:description" content="Free open-source Android app that opens maps.apple.com links in Google Maps, Waze, or any other maps app of your choosing.">
+  <meta name="twitter:image" content="https://stanley-projects.github.io/Bridge/og-image.svg">
+  <meta name="twitter:image:alt" content="Bridge app icon: two anchor points connected by an arched span.">
+
+  <!-- LLM / AI agent discoverability -->
+  <link rel="alternate" type="text/plain" title="LLM-friendly project summary" href="llms.txt">
+
+  <!-- Schema.org structured data: software application -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Bridge",
+    "alternateName": ["Bridge for Apple Maps", "Apple Maps Bridge for Android"],
+    "operatingSystem": "Android 5.0+",
+    "applicationCategory": "UtilitiesApplication",
+    "applicationSubCategory": "Maps & Navigation",
+    "downloadUrl": "https://github.com/stanley-projects/Bridge/releases/latest",
+    "installUrl": "https://github.com/stanley-projects/Bridge/releases/latest",
+    "url": "https://stanley-projects.github.io/Bridge/",
+    "sameAs": [
+      "https://github.com/stanley-projects/Bridge"
+    ],
+    "softwareVersion": "1.0.0",
+    "fileSize": "5MB",
+    "description": "Free, open-source Android utility that intercepts maps.apple.com links and opens them in Google Maps, Waze, HERE WeGo, OsmAnd, or any other maps app that handles geo: URIs. After a one-time setup, every Apple Maps link tapped on Android routes silently to the user's preferred maps app. No accounts, no analytics, no background services.",
+    "featureList": [
+      "Intercepts maps.apple.com links system-wide on Android",
+      "Converts Apple Maps coordinates, addresses, place searches, and directions destinations",
+      "Opens results in Google Maps, Waze, or any maps app supporting geo: URIs",
+      "Manual paste-and-convert screen for in-app webview cases",
+      "Privacy first: no analytics, no tracking, no accounts"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Stanley Nwobosi",
+      "url": "https://github.com/stanley-projects"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Stanley Nwobosi"
+    },
+    "license": "https://opensource.org/licenses/MIT",
+    "isAccessibleForFree": true,
+    "inLanguage": "en"
+  }
+  </script>
+
+  <!-- Schema.org structured data: FAQ (voice search + Google rich results + AI citations) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I open an Apple Maps link on Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install Bridge from the GitHub Releases page, complete the one-time auto-bridging setup, and from then on every maps.apple.com link you tap on your Android phone will open in Google Maps, Waze, or whichever maps app you prefer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I convert an Apple Maps link to Google Maps on Android?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Bridge from your launcher, paste the maps.apple.com URL into the field, and tap Convert. Bridge produces a geo: link that opens in Google Maps or any installed maps app. Auto-bridging does the same thing silently when you tap a link directly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Bridge work with Waze, HERE WeGo, OsmAnd, and other navigation apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bridge emits a standard Android geo: intent that any compliant maps app can handle. Android's app chooser lets you pick which one opens the link, and you can set a default."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Bridge collect data or track location?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bridge has no analytics SDK, no crash reporter, no background services, no account system, and no telemetry. It does not request location permission. The only network call it ever makes is to resolve an Apple short or redirect URL when one is shared with you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bridge free and open source?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Bridge is free of charge and released under the MIT License. Full Kotlin source is available on GitHub."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does Android ask me to manually enable Apple Maps link handling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bridge handles links to maps.apple.com, a domain it does not own. Android requires users to opt in per domain for any app handling third-party links so a malicious app cannot silently hijack links to other domains. This is an Android platform security boundary, not a Bridge limitation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bridge affiliated with Apple or Google?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bridge is an independent open-source utility and is not affiliated with, endorsed by, or sponsored by Apple Inc. or Google LLC."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --ink: #17211b;
@@ -72,9 +225,11 @@
       border-radius: 8px;
       display: grid;
       place-items: center;
-      background: conic-gradient(from 160deg, var(--green), var(--blue), var(--amber), var(--green));
-      color: white;
-      font-weight: 900;
+      background: #1B1F28;
+    }
+
+    .mark svg {
+      display: block;
     }
 
     .navlinks {
@@ -332,6 +487,54 @@
       overflow-wrap: anywhere;
     }
 
+    .faq {
+      background: var(--paper);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 18px 22px;
+    }
+
+    .faq details[open] {
+      background: #fbfdfb;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 17px;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: "+";
+      float: right;
+      color: var(--muted);
+      font-weight: 600;
+      transition: transform 0.2s ease;
+    }
+
+    .faq details[open] summary::after {
+      transform: rotate(45deg);
+    }
+
+    .faq details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 28px 0;
@@ -392,13 +595,20 @@
 <body>
   <header>
     <nav class="wrap" aria-label="Primary navigation">
-      <a class="brand" href="#">
-        <span class="mark">A</span>
+      <a class="brand" href="#" aria-label="Bridge — Open Apple Maps links on Android">
+        <span class="mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 24 Q18 8 29 24" stroke="#F2EDDC" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <circle cx="7" cy="24" r="2.8" fill="#F2EDDC"/>
+            <circle cx="29" cy="24" r="2.8" fill="#F2EDDC"/>
+          </svg>
+        </span>
         <span>Bridge</span>
       </a>
       <div class="navlinks">
         <a href="#features">Features</a>
         <a href="#install">Install</a>
+        <a href="#faq">FAQ</a>
         <a href="#source">Source</a>
       </div>
     </nav>
@@ -408,15 +618,15 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1>Bridge</h1>
-          <p class="lead">A tiny Android utility that catches Apple Maps links and opens them in Google Maps, Waze, or any other maps app of your choosing.</p>
+          <h1>Open Apple Maps links on Android.</h1>
+          <p class="lead">Bridge is a free, open-source Android app that catches <code>maps.apple.com</code> links and opens them in Google Maps, Waze, or any other maps app of your choosing. No accounts. No tracking. Under 5 MB.</p>
           <div class="actions">
-            <a class="button primary" href="https://github.com/stanley-projects/Bridge/releases/latest">Download APK</a>
-            <a class="button" href="https://github.com/stanley-projects/Bridge">View on GitHub</a>
+            <a class="button primary" href="https://github.com/stanley-projects/Bridge/releases/latest" rel="noopener">Download APK</a>
+            <a class="button" href="https://github.com/stanley-projects/Bridge" rel="noopener">View on GitHub</a>
           </div>
         </div>
 
-        <div class="phone" aria-label="Preview of the Android converter screen">
+        <div class="phone" role="img" aria-label="Preview of the Bridge Android app: a paste-and-convert screen showing an Apple Maps URL being converted into a Google Maps link.">
           <div class="screen">
             <div class="status"></div>
             <div class="app">
@@ -477,7 +687,7 @@
         <div class="section-head">
           <h2>Install on Android</h2>
           <p>Grab the latest APK, allow your browser or file manager to install unknown apps if Android asks, then open Bridge once and tap <em>Enable auto-bridging</em>. That takes you to an Android settings page where you flip <code>maps.apple.com</code> on. From then on, every Apple Maps link routes silently through Bridge.</p>
-          <p>Why the manual step? Android requires users to opt in per domain for any app that handles links to a third-party site. Bridge doesn’t own <code>apple.com</code>, so it can’t auto-verify the domain. This is an Android security boundary, not a Bridge limitation — every link-handling app of this type works the same way.</p>
+          <p>Why the manual step? Android requires users to opt in per domain for any app that handles links to a third-party site. Bridge doesn't own <code>apple.com</code>, so it can't auto-verify the domain. This is an Android security boundary, not a Bridge limitation — every link-handling app of this type works the same way.</p>
         </div>
         <div class="features">
           <div class="card">
@@ -496,6 +706,49 @@
       </div>
     </section>
 
+    <section id="faq" class="faq">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+          <p>Quick answers about Bridge, Apple Maps links, and Android.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How do I open an Apple Maps link on Android?</summary>
+            <p>Install Bridge from the GitHub Releases page, complete the one-time auto-bridging setup, and from then on every <code>maps.apple.com</code> link you tap on your Android phone will open in Google Maps, Waze, or whichever maps app you prefer.</p>
+          </details>
+          <details>
+            <summary>How do I convert an Apple Maps link to Google Maps?</summary>
+            <p>Open Bridge from your launcher, paste the <code>maps.apple.com</code> URL into the field, and tap <strong>Convert</strong>. Bridge produces a <code>geo:</code> link that opens in Google Maps or any installed maps app. Auto-bridging does the same thing silently when you tap a link directly.</p>
+          </details>
+          <details>
+            <summary>Does Bridge work with Waze, HERE WeGo, OsmAnd, and other navigation apps?</summary>
+            <p>Yes. Bridge emits a standard Android <code>geo:</code> intent that any compliant maps app can handle. Android's app chooser lets you pick which one opens the link, and you can set a default.</p>
+          </details>
+          <details>
+            <summary>Does Bridge collect data, analytics, or track my location?</summary>
+            <p>No. Bridge has no analytics SDK, no crash reporter, no background services, no account system, and no telemetry. It does not request location permission. The only network call it ever makes is to resolve an Apple short or redirect URL when one is shared with you.</p>
+          </details>
+          <details>
+            <summary>Is Bridge free and open source?</summary>
+            <p>Yes. Bridge is free of charge and released under the <a href="https://github.com/stanley-projects/Bridge/blob/main/LICENSE">MIT License</a>. Full Kotlin source is available on <a href="https://github.com/stanley-projects/Bridge">GitHub</a>.</p>
+          </details>
+          <details>
+            <summary>Why does Android ask me to manually enable Apple Maps link handling?</summary>
+            <p>Bridge handles links to <code>maps.apple.com</code>, a domain it doesn't own. Android requires users to opt in per domain for any app handling third-party links so a malicious app cannot silently hijack links to other domains. This is an Android platform security boundary, not a Bridge limitation.</p>
+          </details>
+          <details>
+            <summary>Is Bridge available on the Google Play Store?</summary>
+            <p>Not currently. Install the signed APK directly from the <a href="https://github.com/stanley-projects/Bridge/releases/latest">GitHub Releases page</a>.</p>
+          </details>
+          <details>
+            <summary>Is Bridge affiliated with Apple or Google?</summary>
+            <p>No. Bridge is an independent open-source utility and is not affiliated with, endorsed by, or sponsored by Apple Inc. or Google LLC.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section id="source">
       <div class="wrap">
         <div class="section-head">
@@ -503,15 +756,15 @@
           <p>Clone the repository and run <code>.\gradlew.bat assembleDebug</code>. The APK lands at <code>app/build/outputs/apk/debug/app-debug.apk</code>.</p>
         </div>
         <div class="actions">
-          <a class="button primary" href="https://github.com/stanley-projects/Bridge">Open repository</a>
-          <a class="button" href="https://github.com/stanley-projects/Bridge/issues">Report an issue</a>
+          <a class="button primary" href="https://github.com/stanley-projects/Bridge" rel="noopener">Open repository</a>
+          <a class="button" href="https://github.com/stanley-projects/Bridge/issues" rel="noopener">Report an issue</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Bridge is an independent Android utility and is not affiliated with Apple or Google.</div>
+    <div class="wrap">Bridge is an independent Android utility and is not affiliated with Apple or Google. &copy; 2026 Stanley Nwobosi. <a href="https://github.com/stanley-projects/Bridge/blob/main/LICENSE">MIT License</a>.</div>
   </footer>
 </body>
 </html>

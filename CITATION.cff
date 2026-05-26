@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Bridge — Open Apple Maps Links on Android"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: Stanley
+    family-names: Nwobosi
+    alias: stanley-projects
+repository-code: "https://github.com/stanley-projects/Bridge"
+url: "https://stanley-projects.github.io/Bridge/"
+abstract: >-
+  Bridge is a free, open-source Android utility that intercepts maps.apple.com
+  links and opens them in Google Maps, Waze, HERE WeGo, OsmAnd, or any other
+  maps app of your choosing. After a one-time per-domain setup, every Apple
+  Maps link tapped on Android routes silently to the user's preferred maps app.
+  No accounts, no analytics, no background services.
+keywords:
+  - android
+  - apple-maps
+  - google-maps
+  - waze
+  - maps
+  - geo-uri
+  - deeplink
+  - intent-filter
+  - kotlin
+  - privacy
+license: MIT
+version: 1.0.0
+date-released: "2026-05-25"

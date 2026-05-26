@@ -1,0 +1,5 @@
+Contact: https://github.com/stanley-projects/Bridge/issues
+Expires: 2027-05-25T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://stanley-projects.github.io/Bridge/.well-known/security.txt
+Policy: https://github.com/stanley-projects/Bridge/blob/main/README.md#privacy

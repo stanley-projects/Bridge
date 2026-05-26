@@ -1,0 +1,12 @@
+/* TEAM */
+Maintainer: Stanley Nwobosi
+GitHub: @stanley-projects
+Site: https://stanley-projects.github.io/Bridge/
+
+/* PROJECT */
+Name: Bridge
+Description: Free, open-source Android app that opens maps.apple.com links in Google Maps, Waze, or any maps app of your choosing.
+Source: https://github.com/stanley-projects/Bridge
+License: MIT
+Released: 2026-05-25
+Standards: HTML5, schema.org, Open Graph, IndexNow, llmstxt.org
