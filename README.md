@@ -6,7 +6,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![No Tracking](https://img.shields.io/badge/no%20tracking-100%25-success)](#privacy)
 
-**Bridge is a free, open-source Android utility that opens `maps.apple.com` links in Google Maps, Waze, or any other maps app of your choosing.** It runs silently in the background, intercepting Apple Maps links the moment you tap them — so iPhone-shared locations stop dead-ending in your mobile browser.
+**Tap any `maps.apple.com` link on Android — Bridge silently opens it in Google Maps, Waze, or any other maps app of your choosing.** Free, open-source, runs in the background, no accounts, no tracking. A manual paste-and-convert screen is built in for the rare case a link arrives as plain text — but with auto-bridging enabled (a one-time Android setting), every Apple Maps link you tap just opens, no browser detour, no extra taps.
 
 > Project home: <https://stanley-projects.github.io/Bridge/> · Download: <https://github.com/stanley-projects/Bridge/releases/latest>
 
